@@ -51,7 +51,7 @@ public class Enemy {
         }
 
         public Enemy build() {
-            if (name == null || name.isEmpty()) {
+            if (name == null || name.isBlank()) {
                 throw new IllegalArgumentException("Enemy name is required");
             }
             return new Enemy(this);
