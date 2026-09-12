@@ -1,14 +1,22 @@
 public class Main {
     public static void main(String[] args){
-        GameCharacter warrior = new WarriorBuilder()
-                .name("Charlz")
-                        .build();
+        CharacterBuilder warriorBuilder = new WarriorBuilder();
+        CharacterBuilder mageBuilder = new MageBuilder();
+        GameCharacter customWarrior = warriorBuilder
+                .name("Conan")
+                .health(200)
+                .strength(25)
+                .weapon("Double-Axe")
+                .build();
 
-        GameCharacter mage = new MageBuilder()
-                .name("Gendalf")
-                        .build();
-        System.out.println(warrior);
+        CharacterDirector director = new CharacterDirector();
+        GameCharacter bossWarrior = director.makeBossWarrior(warriorBuilder);
+        GameCharacter archmage = director.makeArchmage(mageBuilder);
+
+        System.out.println(customWarrior);
         System.out.println();
-        System.out.println(mage);
+        System.out.println(archmage);
+        System.out.println();
+        System.out.println(bossWarrior);
     }
 }
