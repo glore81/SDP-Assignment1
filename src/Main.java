@@ -13,10 +13,24 @@ public class Main {
         GameCharacter bossWarrior = director.makeBossWarrior(warriorBuilder);
         GameCharacter archmage = director.makeArchmage(mageBuilder);
 
+        Enemy enemy = Enemy.builder()
+                .name("goblin")
+                .health(120)
+                .strength(20)
+                .build();
+
+        try {
+            new WarriorBuilder().name("Joseph").strength(5).build();
+        } catch (IllegalStateException e){
+            System.out.println("Error: " + e.getMessage());
+        }
+
         System.out.println(customWarrior);
         System.out.println();
         System.out.println(archmage);
         System.out.println();
         System.out.println(bossWarrior);
+        System.out.println();
+        System.out.println(enemy);
     }
 }
