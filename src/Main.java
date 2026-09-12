@@ -1,11 +1,14 @@
 public class Main {
     public static void main(String[] args){
-        Enemy enemy = Enemy.builder()
-                .name("Warrior")
-                .health(80)
-                .strength(20)
-                .build();
+        GameCharacter warrior = new WarriorBuilder()
+                .name("Charlz")
+                        .build();
 
-        System.out.println(enemy);
+        GameCharacter mage = new MageBuilder()
+                .name("Gendalf")
+                        .build();
+        System.out.println(warrior);
+        System.out.println();
+        System.out.println(mage);
     }
 }
